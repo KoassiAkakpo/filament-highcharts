@@ -1,12 +1,18 @@
 import merge from "lodash.merge";
-export default function highcharts({ chartOptions, chartId }) {
+export default function highcharts({ chartOptions, chartId, extraJsOptions }) {
   let chart = null;
   return {
     chartOptions,
     chartId,
+    extraJsOptions,
     init() {
       this.$wire.$on("updateOptions", ({ options }) => {
-        this.chartOptions = merge({}, this.chartOptions, options);
+        this.chartOptions = merge(
+          {},
+          this.chartOptions,
+          this.extraJsOptions,
+          options,
+        );
         this.updateChart(this.chartOptions);
         this.highchartsDarkMode();
       });
@@ -20,13 +26,16 @@ export default function highcharts({ chartOptions, chartId }) {
           }
         });
       });
+      document
+        .querySelectorAll(".fi-wi-chart-filter > .fi-dropdown-panel")
+        .forEach((el) => {
+          el.style.zIndex = "20";
+        });
     },
 
     initChart: function () {
-      chart = Highcharts.chart(
-        document.querySelector(this.chartId),
-        this.chartOptions,
-      );
+      const options = merge({}, this.chartOptions, this.extraJsOptions);
+      chart = Highcharts.chart(document.querySelector(this.chartId), options);
       this.highchartsDarkMode();
     },
 
