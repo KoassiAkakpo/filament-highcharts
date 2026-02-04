@@ -1,0 +1,75 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    /**
+     * Chart Id
+     */
+    protected static ?string $chartId = '$CHART_ID$';
+
+    /**
+     * Widget Title
+     *
+     * @var string|null
+     */
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    /**
+     * Chart options (series, labels, types, size, animations...)
+     * https://api.highcharts.com/highcharts/
+     *
+     * @return array
+     */
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => [
+                'type' => 'bar',
+                'styledMode' => true
+            ],
+            'title' => [
+                'text' => 'Bar Chart',
+            ],
+            'xAxis' => [
+                'categories' => ['Q1', 'Q2', 'Q3', 'Q4'],
+            ],
+            'yAxis' => [
+                'title' => 'Quantity',
+            ],
+            'series' => [
+                [
+                'name' => '2023',
+                'data' => [49.9, 71.5, 106.4, 129.2],
+                ],
+                [
+                    'name' => '2024',
+                    'data' => [83.6, 78.8, 98.5, 93.4],
+                ],
+                [
+                    'name' => '2025',
+                    'data' => [48.9, 38.8, 39.3, 41.4],
+                ],
+            ],
+            'plotOptions' => [
+                'bar' => [
+                    'dataLabels' => [
+                        'enabled' => true,
+                    ],
+                ],
+            ],
+            'credits' => [
+                'enabled' => false,
+            ],
+            'legend' => [
+                'enabled' => true,
+            ],
+            'tooltip' => [
+                'shared' => true,
+            ],
+        ];
+    }
+}

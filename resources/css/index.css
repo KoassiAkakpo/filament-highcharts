@@ -1,15 +1,30 @@
-/* @import '../../vendor/filament/filament/resources/css/theme.css'; */
+@import "../../vendor/filament/filament/resources/css/theme.css";
 @import url("https://code.highcharts.com/css/highcharts.css");
 
 .highcharts-dark .highcharts-background {
-  fill: #18181b;
+    fill: #18181b;
 }
 .highcharts-light .highcharts-background {
-  fill: #ffffff;
+    fill: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+    :root {
+        --highcharts-color-0: #60a5fa; /* blue-400 */
+        --highcharts-color-1: #818cf8; /* indigo-400 */
+        --highcharts-color-2: #4ade80; /* green-400 */
+        --highcharts-color-3: #fb923c; /* orange-400 */
+        --highcharts-color-4: #94a3b8; /* slate-400 */
+        --highcharts-color-5: #c084fc; /* purple-400 */
+        --highcharts-color-6: #2dd4bf; /* teal-400 */
+        --highcharts-color-7: #f87171; /* red-400 */
+        --highcharts-color-8: #fbbf24; /* amber-400 */
+        --highcharts-color-9: #22d3ee; /* cyan-400 */
+    }
+}
+
+.highcharts-dark .highcharts-container,
+[data-theme="dark"] .highcharts-container {
     --highcharts-color-0: #60a5fa; /* blue-400 */
     --highcharts-color-1: #818cf8; /* indigo-400 */
     --highcharts-color-2: #4ade80; /* green-400 */
@@ -20,19 +35,4 @@
     --highcharts-color-7: #f87171; /* red-400 */
     --highcharts-color-8: #fbbf24; /* amber-400 */
     --highcharts-color-9: #22d3ee; /* cyan-400 */
-  }
-}
-
-.highcharts-dark .highcharts-container,
-[data-theme="dark"] .highcharts-container {
-  --highcharts-color-0: #60a5fa; /* blue-400 */
-  --highcharts-color-1: #818cf8; /* indigo-400 */
-  --highcharts-color-2: #4ade80; /* green-400 */
-  --highcharts-color-3: #fb923c; /* orange-400 */
-  --highcharts-color-4: #94a3b8; /* slate-400 */
-  --highcharts-color-5: #c084fc; /* purple-400 */
-  --highcharts-color-6: #2dd4bf; /* teal-400 */
-  --highcharts-color-7: #f87171; /* red-400 */
-  --highcharts-color-8: #fbbf24; /* amber-400 */
-  --highcharts-color-9: #22d3ee; /* cyan-400 */
 }
