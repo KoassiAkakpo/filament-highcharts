@@ -2,6 +2,7 @@
 
 namespace Koassi\FilamentHighcharts\Widgets;
 
+use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Koassi\FilamentHighcharts\Concerns\CanDeferLoading;
 use Koassi\FilamentHighcharts\Concerns\CanFilter;
 use Koassi\FilamentHighcharts\Concerns\HasContentHeight;
@@ -24,6 +25,7 @@ class HighchartsWidget extends Widget implements HasSchemas
     use HasFooter;
     use HasHeader;
     use HasLoadingIndicator;
+    use InteractsWithSchemas;
 
     protected static ?string $chartId = null;
 

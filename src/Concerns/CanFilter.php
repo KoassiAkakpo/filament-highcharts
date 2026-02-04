@@ -13,7 +13,7 @@ trait CanFilter
 
     public ?string $filter = null;
 
-    public bool $dropdownOpen = true;
+    public bool $dropdownOpen = false;
 
     /**
      * Retrieves the simple filter options.
