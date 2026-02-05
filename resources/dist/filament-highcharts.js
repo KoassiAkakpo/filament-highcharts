@@ -4,10 +4,10 @@ function gr(l) {
 }
 var $ = { exports: {} };
 $.exports;
-(function(l, A) {
-  var w = 200, T = "__lodash_hash_undefined__", p = 800, K = 16, E = 9007199254740991, q = "[object Arguments]", M = "[object Array]", Q = "[object AsyncFunction]", V = "[object Boolean]", D = "[object Date]", z = "[object Error]", g = "[object Function]", Mt = "[object GeneratorFunction]", Dt = "[object Map]", zt = "[object Number]", Pt = "[object Null]", ot = "[object Object]", Rt = "[object Proxy]", Lt = "[object RegExp]", Ut = "[object Set]", Ft = "[object String]", Ht = "[object Undefined]", Gt = "[object WeakMap]", Nt = "[object ArrayBuffer]", Bt = "[object DataView]", $t = "[object Float32Array]", Kt = "[object Float64Array]", qt = "[object Int8Array]", Qt = "[object Int16Array]", Vt = "[object Int32Array]", Yt = "[object Uint8Array]", Wt = "[object Uint8ClampedArray]", Xt = "[object Uint16Array]", Zt = "[object Uint32Array]", Jt = /[\\^$.*+?()[\]{}|]/g, kt = /^\[object .+?Constructor\]$/, te = /^(?:0|[1-9]\d*)$/, s = {};
-  s[$t] = s[Kt] = s[qt] = s[Qt] = s[Vt] = s[Yt] = s[Wt] = s[Xt] = s[Zt] = !0, s[q] = s[M] = s[Nt] = s[V] = s[Bt] = s[D] = s[z] = s[g] = s[Dt] = s[zt] = s[ot] = s[Lt] = s[Ut] = s[Ft] = s[Gt] = !1;
-  var st = typeof B == "object" && B && B.Object === Object && B, ee = typeof self == "object" && self && self.Object === Object && self, C = st || ee || Function("return this")(), ut = A && !A.nodeType && A, S = ut && !0 && l && !l.nodeType && l, ft = S && S.exports === ut, Y = ft && st.process, ct = function() {
+(function(l, O) {
+  var w = 200, T = "__lodash_hash_undefined__", _ = 800, K = 16, E = 9007199254740991, q = "[object Arguments]", M = "[object Array]", Q = "[object AsyncFunction]", V = "[object Boolean]", D = "[object Date]", z = "[object Error]", p = "[object Function]", Mt = "[object GeneratorFunction]", Dt = "[object Map]", zt = "[object Number]", Pt = "[object Null]", ot = "[object Object]", Rt = "[object Proxy]", Lt = "[object RegExp]", Ut = "[object Set]", Ft = "[object String]", Ht = "[object Undefined]", Gt = "[object WeakMap]", Nt = "[object ArrayBuffer]", Bt = "[object DataView]", $t = "[object Float32Array]", Kt = "[object Float64Array]", qt = "[object Int8Array]", Qt = "[object Int16Array]", Vt = "[object Int32Array]", Yt = "[object Uint8Array]", Wt = "[object Uint8ClampedArray]", Xt = "[object Uint16Array]", Zt = "[object Uint32Array]", Jt = /[\\^$.*+?()[\]{}|]/g, kt = /^\[object .+?Constructor\]$/, te = /^(?:0|[1-9]\d*)$/, s = {};
+  s[$t] = s[Kt] = s[qt] = s[Qt] = s[Vt] = s[Yt] = s[Wt] = s[Xt] = s[Zt] = !0, s[q] = s[M] = s[Nt] = s[V] = s[Bt] = s[D] = s[z] = s[p] = s[Dt] = s[zt] = s[ot] = s[Lt] = s[Ut] = s[Ft] = s[Gt] = !1;
+  var st = typeof B == "object" && B && B.Object === Object && B, ee = typeof self == "object" && self && self.Object === Object && self, C = st || ee || Function("return this")(), ut = O && !O.nodeType && O, S = ut && !0 && l && !l.nodeType && l, ft = S && S.exports === ut, Y = ft && st.process, ct = function() {
     try {
       var t = S && S.require && S.require("util").types;
       return t || Y && Y.binding && Y.binding("util");
@@ -45,11 +45,11 @@ $.exports;
       return t(e(r));
     };
   }
-  var se = Array.prototype, ue = Function.prototype, P = Object.prototype, W = C["__core-js_shared__"], R = ue.toString, _ = P.hasOwnProperty, ht = function() {
+  var se = Array.prototype, ue = Function.prototype, P = Object.prototype, W = C["__core-js_shared__"], R = ue.toString, g = P.hasOwnProperty, ht = function() {
     var t = /[^.]+$/.exec(W && W.keys && W.keys.IE_PROTO || "");
     return t ? "Symbol(src)_1." + t : "";
   }(), dt = P.toString, fe = R.call(Object), ce = RegExp(
-    "^" + R.call(_).replace(Jt, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
+    "^" + R.call(g).replace(Jt, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
   ), L = ft ? C.Buffer : void 0, pt = C.Symbol, gt = C.Uint8Array;
   L && L.allocUnsafe;
   var _t = oe(Object.getPrototypeOf, Object), yt = Object.create, le = P.propertyIsEnumerable, he = se.splice, y = pt ? pt.toStringTag : void 0, U = function() {
@@ -91,11 +91,11 @@ $.exports;
       var r = e[t];
       return r === T ? void 0 : r;
     }
-    return _.call(e, t) ? e[t] : void 0;
+    return g.call(e, t) ? e[t] : void 0;
   }
   function ve(t) {
     var e = this.__data__;
-    return j ? e[t] !== void 0 : _.call(e, t);
+    return j ? e[t] !== void 0 : g.call(e, t);
   }
   function Te(t, e) {
     var r = this.__data__;
@@ -112,14 +112,14 @@ $.exports;
   function me() {
     this.__data__ = [], this.size = 0;
   }
-  function Oe(t) {
+  function Ae(t) {
     var e = this.__data__, r = F(e, t);
     if (r < 0)
       return !1;
     var n = e.length - 1;
     return r == n ? e.pop() : he.call(e, r, 1), --this.size, !0;
   }
-  function Ae(t) {
+  function Oe(t) {
     var e = this.__data__, r = F(e, t);
     return r < 0 ? void 0 : e[r][1];
   }
@@ -130,7 +130,7 @@ $.exports;
     var r = this.__data__, n = F(r, t);
     return n < 0 ? (++this.size, r.push([t, e])) : r[n][1] = e, this;
   }
-  d.prototype.clear = me, d.prototype.delete = Oe, d.prototype.get = Ae, d.prototype.has = we, d.prototype.set = Ce;
+  d.prototype.clear = me, d.prototype.delete = Ae, d.prototype.get = Oe, d.prototype.has = we, d.prototype.set = Ce;
   function m(t) {
     var e = -1, r = t == null ? 0 : t.length;
     for (this.clear(); ++e < r; ) {
@@ -160,7 +160,7 @@ $.exports;
     return r.set(t, e), this.size += r.size == n ? 0 : 1, this;
   }
   m.prototype.clear = Se, m.prototype.delete = je, m.prototype.get = Ie, m.prototype.has = xe, m.prototype.set = Ee;
-  function O(t) {
+  function A(t) {
     var e = this.__data__ = new d(t);
     this.size = e.size;
   }
@@ -187,7 +187,7 @@ $.exports;
     }
     return r.set(t, e), this.size = r.size, this;
   }
-  O.prototype.clear = Me, O.prototype.delete = De, O.prototype.get = ze, O.prototype.has = Pe, O.prototype.set = Re;
+  A.prototype.clear = Me, A.prototype.delete = De, A.prototype.get = ze, A.prototype.has = Pe, A.prototype.set = Re;
   function Le(t, e) {
     var r = et(t), n = !r && tt(t), i = !r && !n && wt(t), o = !r && !n && !i && St(t), u = r || n || i || o, a = u ? ne(t.length, String) : [], f = a.length;
     for (var h in t)
@@ -195,7 +195,7 @@ $.exports;
       (h == "length" || // Node.js 0.10 has enumerable non-index properties on buffers.
       i && (h == "offset" || h == "parent") || // PhantomJS 2 has enumerable non-index properties on typed arrays.
       o && (h == "buffer" || h == "byteLength" || h == "byteOffset") || // Skip index properties.
-      Ot(h, f)) || a.push(h);
+      At(h, f)) || a.push(h);
     return a;
   }
   function X(t, e, r) {
@@ -203,7 +203,7 @@ $.exports;
   }
   function Ue(t, e, r) {
     var n = t[e];
-    (!(_.call(t, e) && N(n, r)) || r === void 0 && !(e in t)) && Z(t, e, r);
+    (!(g.call(t, e) && N(n, r)) || r === void 0 && !(e in t)) && Z(t, e, r);
   }
   function F(t, e) {
     for (var r = t.length; r--; )
@@ -238,14 +238,14 @@ $.exports;
   function Ne(t) {
     if (!v(t))
       return nr(t);
-    var e = At(t), r = [];
+    var e = Ot(t), r = [];
     for (var n in t)
-      n == "constructor" && (e || !_.call(t, n)) || r.push(n);
+      n == "constructor" && (e || !g.call(t, n)) || r.push(n);
     return r;
   }
   function mt(t, e, r, n, i) {
     t !== e && Fe(e, function(o, u) {
-      if (i || (i = new O()), v(o))
+      if (i || (i = new A()), v(o))
         Be(t, e, u, r, mt, n, i);
       else {
         var a = n ? n(k(t, u), o, u + "", t, e, i) : void 0;
@@ -332,7 +332,7 @@ $.exports;
     return He(r) ? r : void 0;
   }
   function Je(t) {
-    var e = _.call(t, y), r = t[y];
+    var e = g.call(t, y), r = t[y];
     try {
       t[y] = void 0;
       var n = !0;
@@ -342,9 +342,9 @@ $.exports;
     return n && (e ? t[y] = r : delete t[y]), i;
   }
   function ke(t) {
-    return typeof t.constructor == "function" && !At(t) ? ge(_t(t)) : {};
+    return typeof t.constructor == "function" && !Ot(t) ? ge(_t(t)) : {};
   }
-  function Ot(t, e) {
+  function At(t, e) {
     var r = typeof t;
     return e = e ?? E, !!e && (r == "number" || r != "symbol" && te.test(t)) && t > -1 && t % 1 == 0 && t < e;
   }
@@ -352,7 +352,7 @@ $.exports;
     if (!v(r))
       return !1;
     var n = typeof e;
-    return (n == "number" ? rt(r) && Ot(e, r.length) : n == "string" && e in r) ? N(r[e], t) : !1;
+    return (n == "number" ? rt(r) && At(e, r.length) : n == "string" && e in r) ? N(r[e], t) : !1;
   }
   function er(t) {
     var e = typeof t;
@@ -361,7 +361,7 @@ $.exports;
   function rr(t) {
     return !!ht && ht in t;
   }
-  function At(t) {
+  function Ot(t) {
     var e = t && t.constructor, r = typeof e == "function" && e.prototype || P;
     return t === r;
   }
@@ -395,7 +395,7 @@ $.exports;
     return function() {
       var n = pe(), i = K - (n - r);
       if (r = n, i > 0) {
-        if (++e >= p)
+        if (++e >= _)
           return arguments[0];
       } else
         e = 0;
@@ -421,7 +421,7 @@ $.exports;
   var tt = Tt(/* @__PURE__ */ function() {
     return arguments;
   }()) ? Tt : function(t) {
-    return I(t) && _.call(t, "callee") && !le.call(t, "callee");
+    return I(t) && g.call(t, "callee") && !le.call(t, "callee");
   }, et = Array.isArray;
   function rt(t) {
     return t != null && Ct(t.length) && !nt(t);
@@ -434,7 +434,7 @@ $.exports;
     if (!v(t))
       return !1;
     var e = H(t);
-    return e == g || e == Mt || e == Q || e == Rt;
+    return e == p || e == Mt || e == Q || e == Rt;
   }
   function Ct(t) {
     return typeof t == "number" && t > -1 && t % 1 == 0 && t <= E;
@@ -452,7 +452,7 @@ $.exports;
     var e = _t(t);
     if (e === null)
       return !0;
-    var r = _.call(e, "constructor") && e.constructor;
+    var r = g.call(e, "constructor") && e.constructor;
     return typeof r == "function" && r instanceof r && R.call(r) == fe;
   }
   var St = lt ? ie(lt) : Ge;
@@ -480,19 +480,19 @@ $.exports;
 })($, $.exports);
 var _r = $.exports;
 const Et = /* @__PURE__ */ gr(_r);
-function yr({ chartOptions: l, chartId: A, extraJsOptions: w }) {
+function yr({ chartOptions: l, chartId: O, extraJsOptions: w }) {
   let T = null;
   return {
     chartOptions: l,
-    chartId: A,
+    chartId: O,
     extraJsOptions: w,
     init() {
-      this.$wire.$on("updateOptions", ({ options: p }) => {
-        console.log("updateOptions", p), this.chartOptions = Et(
+      this.$wire.$on("updateOptions", ({ options: _ }) => {
+        this.chartOptions = Et(
           {},
           this.chartOptions,
           w,
-          p
+          _
         ), this.updateChart(this.chartOptions), this.highchartsDarkMode();
       }), Alpine.effect(() => {
         this.$nextTick(() => {
@@ -506,21 +506,21 @@ function yr({ chartOptions: l, chartId: A, extraJsOptions: w }) {
         this.chartOptions
       ), this.highchartsDarkMode();
     },
-    updateChart(p) {
-      T.update(p, !0, !0);
+    updateChart(_) {
+      T.update(_, !0, !0);
     },
     highchartsDarkMode() {
-      const p = ".filament-highcharts-chart-container", K = "highcharts-dark", E = "highcharts-light", M = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null, Q = () => {
+      const _ = ".filament-highcharts-chart-container", K = "highcharts-dark", E = "highcharts-light", M = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null, Q = () => {
         try {
           return localStorage.getItem("theme") || "system";
         } catch {
           return "system";
         }
-      }, V = (g) => g === "dark" ? !0 : g === "light" ? !1 : M ? M.matches : !1, D = document.querySelectorAll(p);
+      }, V = (p) => p === "dark" ? !0 : p === "light" ? !1 : M ? M.matches : !1, D = document.querySelectorAll(_);
       if (!D.length) return;
       const z = V(Q());
-      D.forEach((g) => {
-        g.classList.toggle(K, z), g.classList.toggle(E, !z);
+      D.forEach((p) => {
+        p.classList.toggle(K, z), p.classList.toggle(E, !z);
       });
     }
   };

@@ -7,7 +7,6 @@ export default function highcharts({ chartOptions, chartId, extraJsOptions }) {
         extraJsOptions,
         init() {
             this.$wire.$on("updateOptions", ({ options }) => {
-                console.log("updateOptions", options);
                 this.chartOptions = merge(
                     {},
                     this.chartOptions,
