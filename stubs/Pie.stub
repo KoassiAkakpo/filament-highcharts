@@ -1,0 +1,67 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    /**
+     * Chart Id
+     */
+    protected static ?string $chartId = '$CHART_ID$';
+
+    /**
+     * Widget Title
+     *
+     * @var string|null
+     */
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    /**
+     * Chart options (series, labels, types, size, animations...)
+     * https://api.highcharts.com/highcharts/
+     *
+     * @return array
+     */
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => [
+                'type' => 'pie',
+                'styledMode' => true
+            ],
+            'title' => [
+                'text' => 'Pie Chart',
+            ],
+            'series' => [
+                [
+                    'name' => 'Share',
+                    'data' => [
+                        ['name' => 'Chrome', 'y' => 61.41],
+                        ['name' => 'Edge', 'y' => 11.84],
+                        ['name' => 'Firefox', 'y' => 10.85],
+                        ['name' => 'Safari', 'y' => 4.67],
+                        ['name' => 'Other', 'y' => 11.23],
+                    ],
+                ],
+            ],
+            'plotOptions' => [
+                'pie' => [
+                    'dataLabels' => [
+                        'enabled' => true,
+                    ],
+                ],
+            ],
+            'credits' => [
+                'enabled' => false,
+            ],
+            'legend' => [
+                'enabled' => true,
+            ],
+            'tooltip' => [
+                'pointFormat' => '<b>{point.percentage:.1f}%</b>',
+            ],
+        ];
+    }
+}

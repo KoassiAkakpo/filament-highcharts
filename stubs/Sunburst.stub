@@ -1,0 +1,32 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'sunburst', 'styledMode' => true],
+            'title' => ['text' => 'Sunburst Chart'],
+            'series' => [
+                [
+                    'type' => 'sunburst',
+                    'data' => [
+                        ['id' => 'A', 'parent' => '', 'name' => 'Root'],
+                        ['id' => 'B', 'parent' => 'A', 'name' => 'Branch 1', 'value' => 5],
+                        ['id' => 'C', 'parent' => 'A', 'name' => 'Branch 2', 'value' => 3],
+                        ['id' => 'D', 'parent' => 'B', 'name' => 'Leaf 1', 'value' => 2],
+                        ['id' => 'E', 'parent' => 'B', 'name' => 'Leaf 2', 'value' => 3],
+                    ],
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

@@ -1,0 +1,38 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'organization', 'styledMode' => true],
+            'title' => ['text' => 'Organization Chart'],
+            'series' => [
+                [
+                    'keys' => ['from', 'to'],
+                    'data' => [
+                        ['CEO', 'CTO'],
+                        ['CEO', 'CFO'],
+                        ['CTO', 'Dev'],
+                        ['CTO', 'Design'],
+                    ],
+                    'nodes' => [
+                        ['id' => 'CEO'],
+                        ['id' => 'CTO'],
+                        ['id' => 'CFO'],
+                        ['id' => 'Dev'],
+                        ['id' => 'Design'],
+                    ],
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

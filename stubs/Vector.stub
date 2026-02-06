@@ -1,0 +1,29 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'vector', 'styledMode' => true],
+            'title' => ['text' => 'Vector Chart'],
+            'xAxis' => ['min' => 0, 'max' => 10],
+            'yAxis' => ['min' => 0, 'max' => 10],
+            'series' => [
+                [
+                    'type' => 'vector',
+                    'data' => [[0, 0, 3, 2], [1, 1, 2, 3], [2, 2, 4, 1], [3, 3, 2, 2], [4, 4, 1, 4]],
+                    'name' => 'Vectors',
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

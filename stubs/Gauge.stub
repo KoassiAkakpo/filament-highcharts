@@ -1,0 +1,62 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    /**
+     * Chart Id
+     */
+    protected static ?string $chartId = '$CHART_ID$';
+
+    /**
+     * Widget Title
+     *
+     * @var string|null
+     */
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    /**
+     * Chart options (series, labels, types, size, animations...)
+     * https://api.highcharts.com/highcharts/
+     *
+     * @return array
+     */
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => [
+                'type' => 'gauge',
+                'styledMode' => true
+            ],
+            'title' => [
+                'text' => 'Gauge Chart',
+            ],
+            'pane' => [
+                'startAngle' => -150,
+                'endAngle' => 150,
+            ],
+            'yAxis' => [
+                'min' => 0,
+                'max' => 100,
+                'title' => [
+                    'text' => 'Percent',
+                ],
+            ],
+            'series' => [
+                [
+                    'name' => 'Speed',
+                    'data' => [75],
+                    'dataLabels' => [
+                        'format' => '{y}%',
+                    ],
+                ],
+            ],
+            'credits' => [
+                'enabled' => false,
+            ],
+        ];
+    }
+}

@@ -1,0 +1,32 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'treemap', 'styledMode' => true],
+            'title' => ['text' => 'Treemap Chart'],
+            'series' => [
+                [
+                    'type' => 'treemap',
+                    'data' => [
+                        ['name' => 'A', 'value' => 6, 'colorValue' => 1],
+                        ['name' => 'B', 'value' => 4, 'colorValue' => 2],
+                        ['name' => 'C', 'value' => 3, 'colorValue' => 3],
+                        ['name' => 'D', 'value' => 2, 'colorValue' => 4],
+                        ['name' => 'E', 'value' => 2, 'colorValue' => 5],
+                    ],
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

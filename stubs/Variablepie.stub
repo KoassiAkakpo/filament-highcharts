@@ -1,0 +1,31 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'variablepie', 'styledMode' => true],
+            'title' => ['text' => 'Variable Pie Chart'],
+            'series' => [
+                [
+                    'name' => 'Variable Pie',
+                    'data' => [
+                        ['name' => 'A', 'y' => 5, 'z' => 100],
+                        ['name' => 'B', 'y' => 3, 'z' => 80],
+                        ['name' => 'C', 'y' => 2, 'z' => 60],
+                        ['name' => 'D', 'y' => 4, 'z' => 40],
+                    ],
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

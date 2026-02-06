@@ -1,0 +1,33 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'dumbbell', 'styledMode' => true],
+            'title' => ['text' => 'Dumbbell Chart'],
+            'xAxis' => ['categories' => ['Q1', 'Q2', 'Q3', 'Q4']],
+            'yAxis' => ['title' => ['text' => 'Values']],
+            'series' => [
+                [
+                    'name' => 'Range',
+                    'data' => [
+                        ['low' => 0, 'high' => 50],
+                        ['low' => 10, 'high' => 60],
+                        ['low' => 20, 'high' => 70],
+                        ['low' => 30, 'high' => 80],
+                    ],
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

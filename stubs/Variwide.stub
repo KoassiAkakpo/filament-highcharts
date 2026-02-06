@@ -1,0 +1,25 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'variwide', 'styledMode' => true],
+            'title' => ['text' => 'Variwide Chart'],
+            'xAxis' => ['categories' => ['Q1', 'Q2', 'Q3', 'Q4'], 'type' => 'category'],
+            'yAxis' => ['title' => ['text' => 'Quantity']],
+            'series' => [
+                ['name' => '2024', 'data' => [[0, 49.9, 1], [1, 71.5, 1.5], [2, 106.4, 2], [3, 129.2, 2.5]]],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

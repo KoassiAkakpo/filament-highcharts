@@ -1,0 +1,25 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'bullet', 'styledMode' => true],
+            'title' => ['text' => 'Bullet Chart'],
+            'xAxis' => ['categories' => ['Revenue']],
+            'yAxis' => ['title' => null, 'max' => 300],
+            'series' => [
+                ['type' => 'bullet', 'data' => [[0, 150, 225], [0, 275], [0, 220]]],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

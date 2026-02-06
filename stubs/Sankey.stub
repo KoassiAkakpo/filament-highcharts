@@ -1,0 +1,33 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'sankey', 'styledMode' => true],
+            'title' => ['text' => 'Sankey Chart'],
+            'series' => [
+                [
+                    'keys' => ['from', 'to', 'weight'],
+                    'data' => [
+                        ['A', 'B', 5],
+                        ['A', 'C', 3],
+                        ['B', 'D', 4],
+                        ['C', 'D', 2],
+                        ['C', 'E', 1],
+                    ],
+                    'type' => 'sankey',
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

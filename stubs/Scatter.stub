@@ -1,0 +1,68 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    /**
+     * Chart Id
+     */
+    protected static ?string $chartId = '$CHART_ID$';
+
+    /**
+     * Widget Title
+     *
+     * @var string|null
+     */
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    /**
+     * Chart options (series, labels, types, size, animations...)
+     * https://api.highcharts.com/highcharts/
+     *
+     * @return array
+     */
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => [
+                'type' => 'scatter',
+                'styledMode' => true
+            ],
+            'title' => [
+                'text' => 'Scatter Chart',
+            ],
+            'xAxis' => [
+                'title' => 'X',
+                'min' => 0,
+                'max' => 100,
+            ],
+            'yAxis' => [
+                'title' => 'Y',
+                'min' => 0,
+                'max' => 100,
+            ],
+            'series' => [
+                [
+                    'name' => 'Series 1',
+                    'data' => [[29.9, 71.5], [106.4, 129.2], [83.6, 78.8], [98.5, 93.4], [48.9, 38.8]],
+                ],
+                [
+                    'name' => 'Series 2',
+                    'data' => [[20, 80], [90, 20], [50, 50], [40, 60], [70, 30]],
+                ],
+            ],
+            'credits' => [
+                'enabled' => false,
+            ],
+            'legend' => [
+                'enabled' => true,
+            ],
+            'tooltip' => [
+                'pointFormat' => 'x: {point.x}, y: {point.y}',
+            ],
+        ];
+    }
+}

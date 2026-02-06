@@ -1,0 +1,34 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'windbarb', 'styledMode' => true],
+            'title' => ['text' => 'Wind Barb Chart'],
+            'xAxis' => ['type' => 'datetime'],
+            'yAxis' => ['title' => ['text' => 'Wind speed (m/s)']],
+            'series' => [
+                [
+                    'type' => 'windbarb',
+                    'data' => [
+                        [1704067200000, 5.5, 270],
+                        [1704153600000, 3.2, 180],
+                        [1704240000000, 8.1, 90],
+                        [1704326400000, 2.0, 45],
+                    ],
+                    'name' => 'Wind',
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}

@@ -1,0 +1,32 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Koassi\FilamentHighcharts\Widgets\HighchartsWidget;
+
+class $CLASS_NAME$ extends HighchartsWidget
+{
+    protected static ?string $chartId = '$CHART_ID$';
+    protected static ?string $heading = '$CLASS_NAME$';
+
+    protected function getOptions(): array
+    {
+        return [
+            'chart' => ['type' => 'funnel', 'styledMode' => true],
+            'title' => ['text' => 'Funnel Chart'],
+            'series' => [
+                [
+                    'name' => 'Funnel',
+                    'data' => [
+                        ['Website visits', 15654],
+                        ['Downloads', 4064],
+                        ['Requested price list', 1987],
+                        ['Invoice sent', 976],
+                        ['Finalized', 846],
+                    ],
+                ],
+            ],
+            'credits' => ['enabled' => false],
+        ];
+    }
+}
