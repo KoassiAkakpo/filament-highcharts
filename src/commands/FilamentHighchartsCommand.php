@@ -95,7 +95,7 @@ class FilamentHighchartsCommand extends Command
                     ->trim(' ')
                     ->replace('/', '\\');
 
-                if (!str($resource)->endsWith('Resource')) {
+                if (! str($resource)->endsWith('Resource')) {
                     $resource .= 'Resource';
                 }
 
@@ -116,7 +116,7 @@ class FilamentHighchartsCommand extends Command
                 label: 'Where would you like to create this?',
                 options: array_unique([
                     ...array_map(
-                        fn(Panel $panel): string => "The [{$panel->getId()}] panel",
+                        fn (Panel $panel): string => "The [{$panel->getId()}] panel",
                         $panels,
                     ),
                     $namespace => "[{$namespace}] alongside other Livewire components",
@@ -129,7 +129,7 @@ class FilamentHighchartsCommand extends Command
         $resourcePath = null;
         $resourceNamespace = null;
 
-        if (!$panel) {
+        if (! $panel) {
             $namespace = config('livewire.class_namespace');
             $path = app_path((string) str($namespace)->after('App\\')->replace('\\', '/'));
         } elseif ($resource === null) {
@@ -159,7 +159,7 @@ class FilamentHighchartsCommand extends Command
         if ($path) {
             $this->makeDirectory($path);
             $contents = $this->getSourceFile($namespace, $widget, $chartType);
-            $file = $path . '/' . $widget . '.php';
+            $file = $path.'/'.$widget.'.php';
             if ($this->files->exists($file)) {
                 $this->error("File : {$file} already exits!");
                 exit();
@@ -176,11 +176,11 @@ class FilamentHighchartsCommand extends Command
             }
         } elseif ($resourcePath) {
 
-            $this->makeDirectory($resourcePath . '/' . $resourceClass . '/Widgets');
+            $this->makeDirectory($resourcePath.'/'.$resourceClass.'/Widgets');
 
-            $contents = $this->getSourceFile($resourceNamespace . '\\' . $resourceClass . '\\Widgets', $widget, $chartType);
+            $contents = $this->getSourceFile($resourceNamespace.'\\'.$resourceClass.'\\Widgets', $widget, $chartType);
 
-            $file = $resourcePath . '/' . $resourceClass . '/Widgets/' . $widget . '.php';
+            $file = $resourcePath.'/'.$resourceClass.'/Widgets/'.$widget.'.php';
 
             if ($this->files->exists($file)) {
                 $this->error("File : {$file} already exits!");
@@ -245,7 +245,7 @@ class FilamentHighchartsCommand extends Command
         $contents = file_get_contents($stub);
 
         foreach ($stubVariables as $search => $replace) {
-            $contents = Str::of($contents)->replace('$' . $search . '$', $replace);
+            $contents = Str::of($contents)->replace('$'.$search.'$', $replace);
         }
 
         return $contents;
@@ -256,7 +256,7 @@ class FilamentHighchartsCommand extends Command
      */
     protected function makeDirectory(string $path): string
     {
-        if (!$this->files->isDirectory($path)) {
+        if (! $this->files->isDirectory($path)) {
             $this->files->makeDirectory($path, 0777, true, true);
         }
 

@@ -3,18 +3,18 @@
 namespace Koassi\FilamentHighcharts\Widgets;
 
 use Filament\Schemas\Concerns\InteractsWithSchemas;
-use Koassi\FilamentHighcharts\Concerns\CanDeferLoading;
-use Koassi\FilamentHighcharts\Concerns\CanFilter;
-use Koassi\FilamentHighcharts\Concerns\HasContentHeight;
-use Koassi\FilamentHighcharts\Concerns\HasFooter;
-use Koassi\FilamentHighcharts\Concerns\HasHeader;
-use Koassi\FilamentHighcharts\Concerns\HasLoadingIndicator;
 use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Support\RawJs;
 use Filament\Widgets\Concerns\CanPoll;
 use Filament\Widgets\Widget;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
+use Koassi\FilamentHighcharts\Concerns\CanDeferLoading;
+use Koassi\FilamentHighcharts\Concerns\CanFilter;
+use Koassi\FilamentHighcharts\Concerns\HasContentHeight;
+use Koassi\FilamentHighcharts\Concerns\HasFooter;
+use Koassi\FilamentHighcharts\Concerns\HasHeader;
+use Koassi\FilamentHighcharts\Concerns\HasLoadingIndicator;
 
 class HighchartsWidget extends Widget implements HasSchemas
 {
@@ -56,7 +56,7 @@ class HighchartsWidget extends Widget implements HasSchemas
 
     protected function getChartId(): ?string
     {
-        return static::$chartId ?? 'highcharts_' . Str::random(10);
+        return static::$chartId ?? 'highcharts_'.Str::random(10);
     }
 
     /**
