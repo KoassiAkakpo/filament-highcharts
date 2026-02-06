@@ -39,13 +39,27 @@ php artisan make:filament-highcharts BlogPostsChart
 
 ### Available chart samples
 
-You may choose: for more samples, please refer to the [Highcharts documentation](https://api.highcharts.com/highcharts/).
+You may choose from the following samples: for more samples, please refer to the [Highcharts documentation](https://api.highcharts.com/highcharts/).
 
-- Line
-- Bar
-- Pie
-- Scatter
-- Column
+| Chart | Chart | Chart |
+|-------|-------|-------|
+| [Line chart](https://www.highcharts.com/demo/highcharts/line-chart) | [Bar chart](https://www.highcharts.com/demo/highcharts/bar-chart) | [Pie chart](https://www.highcharts.com/demo/highcharts/pie-chart) |
+| [Scatter chart](https://www.highcharts.com/demo/highcharts/scatter-chart) | [Column chart](https://www.highcharts.com/demo/highcharts/column-chart) | [Spline chart](https://www.highcharts.com/demo/highcharts/spline-chart) |
+| [Areaspline chart](https://www.highcharts.com/demo/highcharts/areaspline-chart) | [Area chart](https://www.highcharts.com/demo/highcharts/area-chart) | [Arearange chart](https://www.highcharts.com/demo/highcharts/arearange-chart) |
+| [Areaspline range chart](https://www.highcharts.com/demo/highcharts/areasplinerange-chart) | [Column range chart](https://www.highcharts.com/demo/highcharts/columnrange-chart) | [Cylinder chart](https://www.highcharts.com/demo/highcharts/cylinder-chart) |
+| [Dependency wheel chart](https://www.highcharts.com/demo/highcharts/dependencywheel-chart) | [Dumbbell chart](https://www.highcharts.com/demo/highcharts/dumbbell-chart) | [Errorbar chart](https://www.highcharts.com/demo/highcharts/errorbar-chart) |
+| [Funnel chart](https://www.highcharts.com/demo/highcharts/funnel-chart) | [Funnel3d chart](https://www.highcharts.com/demo/highcharts/funnel3d-chart) | [Gauge chart](https://www.highcharts.com/demo/highcharts/gauge-chart) |
+| [Heatmap chart](https://www.highcharts.com/demo/highcharts/heatmap-chart) | [Histogram chart](https://www.highcharts.com/demo/highcharts/histogram-chart) | [Item chart](https://www.highcharts.com/demo/highcharts/item-chart) |
+| [Lollipop chart](https://www.highcharts.com/demo/highcharts/lollipop-chart) | [Network graph chart](https://www.highcharts.com/demo/highcharts/networkgraph-chart) | [Organization chart](https://www.highcharts.com/demo/highcharts/organization-chart) |
+| [Packed bubble chart](https://www.highcharts.com/demo/highcharts/packedbubble-chart) | [Pareto chart](https://www.highcharts.com/demo/highcharts/pareto-chart) | [Pictorial chart](https://www.highcharts.com/demo/highcharts/pictorial-chart) |
+| [Pie chart](https://www.highcharts.com/demo/highcharts/pie-chart) | [Polygon chart](https://www.highcharts.com/demo/highcharts/polygon-chart) | [Pyramid chart](https://www.highcharts.com/demo/highcharts/pyramid-chart) |
+| [Pyramid3d chart](https://www.highcharts.com/demo/highcharts/pyramid3d-chart) | [Sankey chart](https://www.highcharts.com/demo/highcharts/sankey-chart) | [Scatter chart](https://www.highcharts.com/demo/highcharts/scatter-chart) |
+| [Scatter3d chart](https://www.highcharts.com/demo/highcharts/scatter3d-chart) | [Solid gauge chart](https://www.highcharts.com/demo/highcharts/solidgauge-chart) | [Spline chart](https://www.highcharts.com/demo/highcharts/spline-chart) |
+| [Stream graph chart](https://www.highcharts.com/demo/highcharts/streamgraph-chart) | [Sunburst chart](https://www.highcharts.com/demo/highcharts/sunburst-chart) | [Tilemap chart](https://www.highcharts.com/demo/highcharts/tilemap-chart) |
+| [Timeline chart](https://www.highcharts.com/demo/highcharts/timeline-chart) | [Treegraph chart](https://www.highcharts.com/demo/highcharts/treegraph-chart) | [Treemap chart](https://www.highcharts.com/demo/highcharts/treemap-chart) |
+| [Variable pie chart](https://www.highcharts.com/demo/highcharts/variablepie-chart) | [Vari wide chart](https://www.highcharts.com/demo/highcharts/variwide-chart) | [Vector chart](https://www.highcharts.com/demo/highcharts/vector-chart) |
+| [Venn chart](https://www.highcharts.com/demo/highcharts/venn-chart) | [Waterfall chart](https://www.highcharts.com/demo/highcharts/waterfall-chart) | [Windbarb chart](https://www.highcharts.com/demo/highcharts/windbarb-chart) |
+| [Word cloud chart](https://www.highcharts.com/demo/highcharts/wordcloud-chart) | [X range chart](https://www.highcharts.com/demo/highcharts/xrange-chart) | [Arcdiagram chart](https://www.highcharts.com/demo/highcharts/arcdiagram-chart) |
 
 ## Setting a widget title
 
@@ -134,7 +148,7 @@ protected function getFooter(): null|string|Htmlable|View
 ```html
 <!--resources/views/custom-footer.blade.php-->
 <div>
-  <p class="text-danger-500">{{ $text }}</p>
+    <p class="text-danger-500">{{ $text }}</p>
 </div>
 ```
 
@@ -316,7 +330,7 @@ protected function getLoadingIndicator(): null|string|View
 ```html
 <!--resources/views/custom-loading-indicator.blade.php-->
 <div>
-  <p class="text-danger-500">Loading...</p>
+    <p class="text-danger-500">Loading...</p>
 </div>
 ```
 
