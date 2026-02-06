@@ -8,8 +8,6 @@ use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
-use Filament\Support\Facades\FilamentView;
-use Filament\View\PanelsRenderHook;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Blade;
 use Koassi\FilamentHighcharts\Commands\FilamentHighchartsCommand;
@@ -57,7 +55,7 @@ class FilamentHighchartsServiceProvider extends PackageServiceProvider
 
         // Handle Stubs
         if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+            foreach (app(Filesystem::class)->files(__DIR__.'/../stubs/') as $file) {
                 $this->publishes([
                     $file->getRealPath() => base_path("stubs/filament-highcharts/{$file->getFilename()}"),
                 ], 'filament-highcharts-stubs');
@@ -81,8 +79,8 @@ class FilamentHighchartsServiceProvider extends PackageServiceProvider
             Js::make('highcharts-exporting', 'https://code.highcharts.com/modules/exporting.js'),
             Js::make('highcharts-adaptive', 'https://code.highcharts.com/themes/adaptive.js'),
             Js::make('highcharts-accessibility', 'https://code.highcharts.com/modules/accessibility.js'),
-            AlpineComponent::make('filament-highcharts', __DIR__ . '/../resources/dist/filament-highcharts.js'),
-            Css::make('filament-highcharts', __DIR__ . '/../resources/dist/filament-highcharts.css'),
+            AlpineComponent::make('filament-highcharts', __DIR__.'/../resources/dist/filament-highcharts.js'),
+            Css::make('filament-highcharts', __DIR__.'/../resources/dist/filament-highcharts.css'),
         ];
     }
 
