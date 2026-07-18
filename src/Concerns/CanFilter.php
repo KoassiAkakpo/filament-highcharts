@@ -35,33 +35,6 @@ trait CanFilter
     }
 
     /**
-     * Submit the filters form.
-     */
-    public function submitFiltersForm(): void
-    {
-        $this->form->validate();
-
-        $this->dispatch('updateOptions', options: $this->getOptions())
-            ->self();
-
-        $this->dispatch('highcharts-dropdown', open: false);
-    }
-
-    /**
-     * Reset the filters form.
-     */
-    public function resetFiltersForm(): void
-    {
-        $this->form->fill();
-        $this->form->validate();
-
-        $this->dispatch('updateOptions', options: $this->getOptions())
-            ->self();
-
-        $this->dispatch('highcharts-dropdown', open: false);
-    }
-
-    /**
      * Retrieves the value of the static property $filterFormWidth.
      *
      * @return Width | string The value of the $filterFormWidth property, which is either a MaxWidth instance or a string.

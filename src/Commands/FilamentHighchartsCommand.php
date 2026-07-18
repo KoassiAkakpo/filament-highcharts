@@ -202,18 +202,18 @@ class FilamentHighchartsCommand extends Command
     }
 
     /**
-     * Return the stub file path
+     * Return the stub file path, preferring stubs published with the
+     * `filament-highcharts-stubs` tag over the package defaults.
      */
     public function getStubPath($chartType): string
     {
-        $path = Str::of(__DIR__);
+        $publishedPath = base_path("stubs/filament-highcharts/{$chartType}.stub");
 
-        $path = match (PHP_OS_FAMILY) {
-            default => $path->replace('src/Commands', 'stubs/'),
-            'Windows' => $path->replace('src\Commands', 'stubs\\')
-        };
+        if ($this->files->exists($publishedPath)) {
+            return $publishedPath;
+        }
 
-        return $path->append($chartType)->append('.stub');
+        return dirname(__DIR__, 2)."/stubs/{$chartType}.stub";
     }
 
     /**

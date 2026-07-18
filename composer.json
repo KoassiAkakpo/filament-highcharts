@@ -53,6 +53,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
+        "laravel/pint": "^1.29",
         "orchestra/testbench": "^11.1",
         "pestphp/pest": "5.x-dev"
     }
