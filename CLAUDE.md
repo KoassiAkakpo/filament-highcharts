@@ -26,7 +26,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `resources/views/widgets/highcharts-widget.blade.php` (+ `components/chart.blade.php`) renders the widget; chart options go from PHP through `@js()` into the Alpine component defined in `resources/js/index.js`.
 - The Alpine `highcharts()` component calls `Highcharts.chart()` on init and listens for the Livewire `updateOptions` event (dispatched by filter changes, polling, or `updateOptions()` on the widget), deep-merging new options with `lodash.mergewith` (arrays are replaced, not merged by index, so shrinking datasets don't keep stale points) before `chart.update()`. `extraJsOptions` is merged client-side on top of the PHP options.
-- Dark mode: charts should set `'styledMode' => true`; JS toggles `highcharts-dark`/`highcharts-light` classes on `.filament-highcharts-chart-container` based on `localStorage.theme` / `prefers-color-scheme`, with listeners for the Filament `theme-changed` event. This logic exists in both `resources/js/index.js` and an inline `@script` block in `components/chart.blade.php`.
+- Dark mode: charts should set `'styledMode' => true`; JS toggles `highcharts-dark`/`highcharts-light` classes on `.filament-highcharts-chart-container` based on `localStorage.theme` / `prefers-color-scheme`. All of this lives in `resources/js/index.js`: module-scope listeners (registered once per page, since the module is x-load'ed on demand) react to Filament's `theme-changed` event and to OS theme changes so charts re-theme live, without a page reload.
 
 ### Widget generator command
 
