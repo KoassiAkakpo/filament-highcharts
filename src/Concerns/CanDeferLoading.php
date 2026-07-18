@@ -24,5 +24,7 @@ trait CanDeferLoading
     public function loadWidget(): void
     {
         $this->readyToLoad = true;
+
+        $this->syncOptionsHash();
     }
 }

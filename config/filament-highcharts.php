@@ -1,6 +1,13 @@
 <?php
 
 return [
+    /*
+     * Version of the Highcharts library loaded from code.highcharts.com.
+     * Pinned so that a new Highcharts major release cannot silently
+     * break existing charts.
+     */
+    'highcharts_version' => '12.6.0',
+
     'chart_options' => [
         'Area',
         'Arearange',

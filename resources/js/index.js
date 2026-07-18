@@ -1,4 +1,13 @@
-import merge from "lodash.merge";
+import mergeWith from "lodash.mergewith";
+
+// Arrays (series data, categories...) must be replaced, not merged by
+// index: merging [1, 2, 3] with [9] would otherwise produce [9, 2, 3].
+const replaceArrays = (objValue, srcValue) => {
+    if (Array.isArray(srcValue)) {
+        return srcValue;
+    }
+};
+
 export default function highcharts({ chartOptions, chartId, extraJsOptions }) {
     let chart = null;
     return {
@@ -7,11 +16,12 @@ export default function highcharts({ chartOptions, chartId, extraJsOptions }) {
         extraJsOptions,
         init() {
             this.$wire.$on("updateOptions", ({ options }) => {
-                this.chartOptions = merge(
+                this.chartOptions = mergeWith(
                     {},
                     this.chartOptions,
-                    extraJsOptions,
                     options,
+                    extraJsOptions,
+                    replaceArrays,
                 );
                 this.updateChart(this.chartOptions);
                 this.highchartsDarkMode();
@@ -29,7 +39,12 @@ export default function highcharts({ chartOptions, chartId, extraJsOptions }) {
         },
 
         initChart: function () {
-            this.chartOptions = merge({}, this.chartOptions, extraJsOptions);
+            this.chartOptions = mergeWith(
+                {},
+                this.chartOptions,
+                extraJsOptions,
+                replaceArrays,
+            );
             chart = Highcharts.chart(
                 document.querySelector(this.chartId),
                 this.chartOptions,

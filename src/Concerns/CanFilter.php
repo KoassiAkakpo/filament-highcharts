@@ -30,8 +30,7 @@ trait CanFilter
      */
     public function updatedFilter(): void
     {
-        $this->dispatch('updateOptions', options: $this->getOptions())
-            ->self();
+        $this->updateOptions();
     }
 
     /**

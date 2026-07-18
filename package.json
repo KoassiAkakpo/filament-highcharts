@@ -11,6 +11,6 @@
         "vite": "^5.4.0"
     },
     "dependencies": {
-        "lodash.merge": "^4.6.2"
+        "lodash.mergewith": "^4.6.2"
     }
 }

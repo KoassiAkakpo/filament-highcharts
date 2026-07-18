@@ -422,10 +422,18 @@ protected function extraJsOptions(): ?RawJs
 
 ## Publishing config
 
-Optionally, you can publish the config file (to customize the chart types offered by the generator command) using:
+Optionally, you can publish the config file (to customize the chart types offered by the generator command, or the Highcharts version loaded from the CDN) using:
 
 ```bash
 php artisan vendor:publish --tag="filament-highcharts-config"
+```
+
+### Highcharts version
+
+The Highcharts library is loaded from the [code.highcharts.com](https://code.highcharts.com) CDN, pinned to the version set in the config file so that a new Highcharts major release cannot silently break your charts:
+
+```php
+'highcharts_version' => '12.6.0',
 ```
 
 ## Publishing views

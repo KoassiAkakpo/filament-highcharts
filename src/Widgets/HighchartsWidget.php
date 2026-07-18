@@ -32,7 +32,11 @@ class HighchartsWidget extends Widget implements HasSchemas
     // @phpstan-ignore-next-line
     protected string $view = 'filament-highcharts::widgets.highcharts-widget';
 
-    public ?array $options = null;
+    public ?string $generatedChartId = null;
+
+    public ?string $optionsHash = null;
+
+    protected ?array $cachedOptions = null;
 
     public function mount(): void
     {
@@ -40,14 +44,16 @@ class HighchartsWidget extends Widget implements HasSchemas
             $this->getFiltersSchema()->fill();
         }
 
-        $this->options = $this->getOptions();
+        $this->generatedChartId ??= 'highcharts_'.Str::random(10);
 
         if (! $this->getDeferLoading()) {
             $this->readyToLoad = true;
         }
-    }
 
-    public function on(): void {}
+        if ($this->readyToLoad) {
+            $this->syncOptionsHash();
+        }
+    }
 
     public function render(): View
     {
@@ -56,7 +62,7 @@ class HighchartsWidget extends Widget implements HasSchemas
 
     protected function getChartId(): ?string
     {
-        return static::$chartId ?? 'highcharts_'.Str::random(10);
+        return static::$chartId ?? $this->generatedChartId;
     }
 
     /**
@@ -69,17 +75,33 @@ class HighchartsWidget extends Widget implements HasSchemas
         return [];
     }
 
+    /**
+     * Returns the chart options, computing them at most once per request.
+     */
+    protected function getCachedOptions(): array
+    {
+        return $this->cachedOptions ??= $this->getOptions();
+    }
+
+    protected function syncOptionsHash(): void
+    {
+        $this->optionsHash = md5(json_encode($this->getCachedOptions()));
+    }
+
     public function updateOptions(): void
     {
-        if ($this->options !== $this->getOptions()) {
+        $options = $this->getCachedOptions();
+        $hash = md5(json_encode($options));
 
-            $this->options = $this->getOptions();
+        if ($this->optionsHash === $hash) {
+            return;
+        }
 
-            if (! $this->dropdownOpen) {
-                $this
-                    ->dispatch('updateOptions', options: $this->options)
-                    ->self();
-            }
+        $this->optionsHash = $hash;
+
+        if (! $this->dropdownOpen) {
+            $this->dispatch('updateOptions', options: $options)
+                ->self();
         }
     }
 

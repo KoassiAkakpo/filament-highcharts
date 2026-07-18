@@ -73,12 +73,14 @@ class FilamentHighchartsServiceProvider extends PackageServiceProvider
      */
     protected function getAssets(): array
     {
+        $cdn = 'https://code.highcharts.com/'.config('filament-highcharts.highcharts_version', '12.6.0');
+
         return [
-            Js::make('highcharts', 'https://code.highcharts.com/highcharts.js'),
-            Js::make('highcharts-more', 'https://code.highcharts.com/highcharts-more.js'),
-            Js::make('highcharts-exporting', 'https://code.highcharts.com/modules/exporting.js'),
-            Js::make('highcharts-adaptive', 'https://code.highcharts.com/themes/adaptive.js'),
-            Js::make('highcharts-accessibility', 'https://code.highcharts.com/modules/accessibility.js'),
+            Js::make('highcharts', "{$cdn}/highcharts.js"),
+            Js::make('highcharts-more', "{$cdn}/highcharts-more.js"),
+            Js::make('highcharts-exporting', "{$cdn}/modules/exporting.js"),
+            Js::make('highcharts-adaptive', "{$cdn}/themes/adaptive.js"),
+            Js::make('highcharts-accessibility', "{$cdn}/modules/accessibility.js"),
             AlpineComponent::make('filament-highcharts', __DIR__.'/../resources/dist/filament-highcharts.js'),
             Css::make('filament-highcharts', __DIR__.'/../resources/dist/filament-highcharts.css'),
         ];
