@@ -91,6 +91,8 @@ class BlogPostsChart extends HighchartsWidget
 
 Don't forget to register the widget in your panel/resource/page, as with any Filament widget.
 
+Ready-to-use widgets demonstrating filters, polling, deferred loading and raw JS options — the ones behind the screenshots above — are available in the [examples/](examples/) directory.
+
 ### Available chart samples
 
 The generator ships with ready-to-use stubs for the following chart types. For more samples, please refer to the [Highcharts documentation](https://api.highcharts.com/highcharts/).
