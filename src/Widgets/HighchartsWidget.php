@@ -29,7 +29,6 @@ class HighchartsWidget extends Widget implements HasSchemas
 
     protected static ?string $chartId = null;
 
-    // @phpstan-ignore-next-line
     protected string $view = 'filament-highcharts::widgets.highcharts-widget';
 
     public ?string $generatedChartId = null;

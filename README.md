@@ -485,4 +485,4 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENCE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
