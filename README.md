@@ -7,6 +7,14 @@
 Strongly inspired by [Leandro Ferreira's Apex Charts plugin](https://filamentphp.com/plugins/leandrocfe-apex-charts),
 this plugin delivers [Highcharts](https://www.highcharts.com) integration for [Filament](https://filamentphp.com) panels.
 
+<img src="art/screenshots/exemple1.png" width="100%" alt="Filament dashboard showing an area chart widget and a column chart widget with schema filters">
+<table>
+<tr>
+<td width="50%"><img src="art/screenshots/exemple2.png" alt="Line chart widget with a simple select filter and polling"></td>
+<td width="50%"><img src="art/screenshots/exemple3.png" alt="Pie chart widget using defer loading and extraJsOptions"></td>
+</tr>
+</table>
+
 ## Requirements
 
 - PHP 8.3+
