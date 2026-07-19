@@ -34,6 +34,25 @@ jobs:
 
       - run: vendor/bin/pest --ci
 
+  tests-lowest-filament:
+    runs-on: ubuntu-latest
+    # Lowest Filament version installable under Composer's security-advisory
+    # policy (5.0.0 was validated manually; advisories currently floor at 5.6.5).
+    name: PHP 8.3 — lowest Filament
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - run: composer update --prefer-stable --no-interaction --no-progress
+
+      - run: composer update "filament/*" --prefer-lowest --prefer-stable --with-all-dependencies --no-interaction --no-progress
+
+      - run: vendor/bin/pest --ci
+
   static-analysis:
     runs-on: ubuntu-latest
     name: PHPStan
